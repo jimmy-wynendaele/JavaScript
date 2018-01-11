@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HANGMAN</title>
+</head>
+<body>
+
+	<script>
+
+		let list1 = ["a","b"];
+		let list2 = ["a","b"];
+
+		console.log(list2==list1);
+
+		
+		let empty = ["","","","","","",""];
+		let word = ["B","O","N","J","O","U","R"];
+		let count = 0;
+		let i = 0;
+		while(i<=7){
+
+			let ask = window.prompt("Inserez une lettre en majuscule");
+			i++;
+			count++;
+			for(x=0; x<7; x++){				
+				
+				if(word[x]==ask){
+
+					empty[x]=ask;
+					console.log(empty);
+
+				}
+
+			}
+
+}
+console.log("Bravo fucker");
+console.log("Vous avez pris " + count +" tentatives, déchet");	
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FUNCTIONS</title>
+</head>
+<body>
+	<script>
+		
+		 let subtraction = function(a,b){
+			let c = a-b;
+			return c ;
+		}
+
+		 let division = function(a,b){
+			let c = a/b;
+			return c ;
+		}
+
+		 let multiplication = function(a,b){
+			let c = a*b;
+			return c ;
+		}
+
+		 let percentage = function(a,b){
+			let c = a*b*0.01;
+			return c ;
+		}
+
+		 let velocity = function(a,b){
+			let c = a/b + 'km/h';
+			return c;
+		}
+
+		console.log(velocity(220,8));
+
+		let calculation = function(a,b){
+			
+			let calcList =  ['subtraction: ' + subtraction(a,b), 'division: ' + division(a,b), 'multiplication: ' + multiplication(a,b) , 'percentage: ' + percentage(a,b), 'velocity: ' + velocity(a,b)];
+			for(let i=0; i<=4; i++){
+				console.log(calcList[i]);
+			}
+		}
+
+		// ,'division: ' + division(a,b) , 'multiplication: ' + multiplication(a,b) , 'percentage: ' + percentage(a,b) , 'velocity: ' = velocity(a,b)
+
+		calculation(220,8);
+
+	</script>
+</body>
+</html>

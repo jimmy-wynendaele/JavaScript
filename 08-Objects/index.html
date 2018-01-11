@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Objects</title>
+</head>
+<body>
+
+	<script>
+		
+
+		// ex 1 NPC: create variable with game charachter that has items to sell
+
+
+		let Character = {
+
+			name : "player1",
+			age : 40,
+			items_to_give : ["coins" , "potions","elixir"]
+
+
+		}
+
+
+		// return all the values that are stored inside the object Charachter. This logs: player1, 40, and the list ["coins" , "potions","elixir"].
+		for(item in Character){
+			console.log(Character[item]);
+		}
+
+
+		// giveItem is a function that returns a random item from the array of items stored in Charachter. First we need to generate a random number with Math.random. We need to multiply this number with the length of the array of items(Character.items_to_give.length) so we get a number between 0 and 3. Then we need to round the result down so the final result is a random number between 0 and 2. This means you can get 3 numbers : (0,1,2) that you can store within brackets in the list so you return a random item.
+
+		let giveItem = function(){
+			let random = Math.floor(Math.random()*Character.items_to_give.length);
+			return Character.items_to_give[random];
+		}
+
+		console.log(giveItem());
+
+
+		// ex 2 Shop
+
+		
+		
+		let sword = {
+			title : "Sword",
+			physic: 70,
+			magic: 0,
+			minLevel: 1,
+			available: true
+		}
+
+		let scepter = {
+
+			title : "Scepter",
+			physic: 5,
+			magic: 90,
+			minLevel: 1,
+			available: true
+
+		}
+
+		let axe = {
+
+			title : "Axe",
+			physic: 90,
+			magic: 0,
+			minLevel: 10,
+			available: false
+
+		}
+
+		let items_to_sell = [sword, scepter, axe];
+
+		let itemsSold = "";
+
+		let showItems = function(){
+
+			for(let i=0 ; i<items_to_sell.length; i++){
+
+				console.log(items_to_sell[i]);
+		
+			}
+	}
+
+		showItems();
+		
+
+
+		let ShowItemsAvailable = function(){
+
+			for(let i=0 ; i<items_to_sell.length; i++){
+
+				if(items_to_sell[i].available){
+				
+
+					console.log(items_to_sell[i]);
+				}
+
+			}
+
+		}
+
+
+		ShowItemsAvailable();
+
+		let ShowItemsLevel = function(){
+
+			for(let i=0 ; i<items_to_sell.length; i++){
+
+				if(items_to_sell[i].minLevel>=10){
+				
+
+					console.log(items_to_sell[i]);
+				}
+
+			}			
+
+		}
+
+		ShowItemsLevel();
+
+
+
+		// ex 3 Personnage
+
+		let mainCharacter = {
+
+			name: "player2",
+			level: 40,
+			life: 80,
+			weapon: {
+				name: "scepter",
+				damage: "50"
+			},
+			attack: function(){
+
+				return (mainCharacter.name + " attacks with the weapon " + mainCharacter.weapon.name + " the damages are " + mainCharacter.level*mainCharacter.weapon.damage);
+			},
+
+		}
+
+		console.log(mainCharacter.attack());
+
+		// Ex 4 Adversaire
+
+		let enemy = {
+
+			name: "Boss",
+			level: 40,
+			life: 100,
+			weapon: {
+				name: "hache",
+				damage: 60,
+			},
+			attack: function(){},
+			receiveDamage: function(){},
+
+		}
+
+		let fighter1 = Object.create(enemy);
+		
+		let fighter2 = Object.create(enemy);
+
+		fighter1.name = "fighter1";
+		fighter2.name = "fighter2";
+
+		fighter1.attack = function(){
+
+			console.log(fighter1.name + " attaque " + fighter2.name +"\n" + "avec l'arme " + fighter1.weapon.name +"\n" + "et lui inflige " + (fighter1.level * fighter1.weapon.damage) + " damage." + "\n" + fighter2.name + " a maintenant " + (fighter2.life-fighter1.weapon.damage) + " de vie restante.");
+
+		}
+
+
+		fighter1.attack();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Game Right Price</title>
+</head>
+<body>
+
+	<script>
+		
+		let numberOfTrials = 1;
+		let minimum = 20;
+		let maximum = 80;
+
+		let random = function(){
+
+			return Math.round(Math.random()*(maximum-minimum)+minimum);
+
+		}
+
+		let fixedRandom = random();
+		console.log(fixedRandom);
+
+
+		let checkNumber = function(){
+
+			let numberInput = window.prompt('Veuillez entrer un montant');
+
+			if(numberInput == fixedRandom){
+
+				console.log("Correct! Tu as trouvé en " + numberOfTrials + " de coups!");
+
+			}else {
+
+				while(numberInput !== fixedRandom){
+
+					if(numberInput > fixedRandom){
+
+					numberOfTrials++;
+					console.log("C'est moins");
+					console.log(fixedRandom);
+					numberInput = window.prompt('Veuillez entrer un montant');
+
+				
+
+					}else if (numberInput < fixedRandom){
+
+							numberOfTrials++;
+							console.log("C'est plus");
+							console.log(fixedRandom);
+							numberInput = window.prompt('Veuillez entrer un montant');
+
+						
+					}
+
+
+				}
+
+
+				console.log("Correct! Tu as trouvé en " + numberOfTrials + " de coups!");
+			}
+		}
+
+		checkNumber();
+
+
+
+	</script>
+
+</body>
+</html>

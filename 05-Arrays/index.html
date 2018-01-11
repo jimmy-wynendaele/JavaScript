@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Arays</title>
+</head>
+<body>
+
+	<script>
+		
+		// ex 1
+
+
+		let tableau = [1,2,3,4,5,6,7,8,9];
+		let sum = 0;
+		let sumArray = function(){
+
+		for(let i=0; i<tableau.length ; i++){
+
+			sum = sum + tableau[i];
+
+			
+		}
+			return sum
+	}
+
+		console.log(sumArray());
+
+
+
+		// ex 2
+		// Pour faire le bonus : 
+		//		faire une seconde liste avec : "premier", "second", "troisième". 
+
+		let acteurs = ["Stallone", "schwarzenegger", "van damme"];
+		let order = ["premier","second","troisième"]
+
+		let favorite = function(){
+			for(let j=0; j<acteurs.length ; j++){
+
+				console.log("Le numero " + (j+1) + " est " + acteurs[j] + '\n');	
+				
+
+			}
+
+		}
+
+		
+		let ActorsList = "";
+		let ActorNumber = "";
+		acteurs.forEach(function(item,index){
+
+			ActorsList += "Le " + order[index] + " est " + item + "\n";
+			ActorNumber += "Le numero " + (index+1) + " est " + acteurs[index] + "\n";
+
+
+		});
+		console.log(acteurs.length);
+		console.log(ActorsList);
+		console.log(ActorNumber);
+		
+
+
+		// ex 3
+
+		let superMario = ["mario", "luigi", "peach"];
+
+		let superMario2 = [...superMario];
+
+		superMario2.push('Browser');
+
+		console.log(superMario2);
+
+
+	</script>
+
+</body>
+</html>

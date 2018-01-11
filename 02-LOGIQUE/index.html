@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>02-LOGIQUE</title>
+</head>
+<body>
+	<script>
+		// ex 1
+
+		var language = "sp";
+
+		if(language=="fr"){
+			console.log("Bonjour tout le monde");
+		} else if(language=="sp"){
+			console.log("Hola Mundo")
+		} else {
+			console.log("Hello world")
+		}
+
+		// ex 2
+
+		let score = 70;
+
+		switch(true){
+			case score>=90:
+				console.log('RANK A');
+				break;
+
+			case score<90:
+			console.log('Rank B');
+			break;
+
+			case score<50:
+			console.log('Rank C');
+			break;
+
+		}
+
+		// Ex 3
+
+		let word = "chose";
+		let number = 3;
+		let words = word+"s";
+
+		if(number==1){
+			console.log(word);
+		} else{
+			console.log(words);
+		}
+
+	</script>
+</body>
+</html>

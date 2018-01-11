@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Hangman 3</title>
+</head>
+<body>
+
+	<script>
+		
+		let word = ["B","O","N","J","O","U","R"];
+		let lettersFound = ["","","","","","",""];
+
+		let guessLetter = function(){
+		let wrong = 0;
+			while(word.toString() !== lettersFound.toString()){
+
+				let typedLetter = window.prompt("Type letter");
+				let typedLetterUp = typedLetter.toUpperCase();
+
+				for(let i=0 ; i<word.length ; i++){
+
+					if(word[i] == typedLetterUp){
+
+						lettersFound[i] = typedLetterUp;
+						console.log(lettersFound);
+
+
+					}
+
+				}
+
+			}
+
+		}
+
+		guessLetter();
+
+	</script>
+
+</body>
+</html>
