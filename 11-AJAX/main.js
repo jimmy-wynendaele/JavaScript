@@ -87,14 +87,17 @@ req.onload = function(){
 		
 		textParsed.forEach(function(entry,index){
 
+
+
 			let ulTag = document.querySelector('ul');
 			ulTag.style.color = "grey";
 
-			for(let prop in entry){
+			listHtml = Object.values(entry);
+			ulTag.innerHTML += "\t" + listHtml;
 
-				console.log(Object.values(prop))
 
-			};
+			console.log(Object.values(entry));
+
 
 		})
 		
