@@ -2,8 +2,8 @@
 // Ex 1
 
 let selectBody = document.body;
-document.body.classList.remove("bg-aqua");
-document.body.classList.add("bg-olive");
+selectBody.classList.remove("bg-aqua");
+selectBody.classList.add("bg-olive");
 let firstPar = document.getElementById("first-paragraph");
 let classLength =firstPar.classList.length;
 
@@ -13,7 +13,7 @@ for(let i = 0 ; i<classLength;i++){
 
 }
 
-firstPar.classList = "aqua";
+firstPar.classList.add("aqua");
 
 let allElements = document.getElementsByTagName('*');
 console.log(allElements);
@@ -91,9 +91,10 @@ let tableau = ["Silent Teacher","Code Monkey", "CodeCombat"];
 
 for (var i = tableau.length - 1; i >= 0; i--) {
 	list = document.createElement('li');
-	list = tableau[i];
-	console.log(list);
-	olTag.innerHTML+= "\n\t" + list + "\n\t";
+	list.innerHTML = tableau[i];
+	olTag.appendChild(list)
+	//console.log(list);
+	//olTag.innerHTML+= "\n\t" + list + "\n\t";
 }
 
 console.log(olTag.innerHTML);
